@@ -12,7 +12,7 @@
  */
 
 #include <stdint.h>
-#include "loader/include/types.h"
+#include "types.h"
 
 /* mmap syscall constants/defines */
 #define MAP_SHARED 0x01

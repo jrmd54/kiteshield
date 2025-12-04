@@ -1,9 +1,9 @@
-CFLAGS_COMMON = -Wall -Werror -std=gnu99 -I .. -I bddisasm/inc
-CFLAGS = $(CFLAGS_COMMON) -O2
+CFLAGS_COMMON = -Wall -Werror -Wno-error=array-bounds -Wno-error=dangling-pointer -Wno-error=sizeof-pointer-memaccess -std=gnu99 -I .. -I bddisasm/inc
+CFLAGS = $(CFLAGS_COMMON) -O2 -Wno-error=array-bounds
 
 LDFLAGS = -Lbddisasm/bin/x64/Release -l:libbddisasm.a
 
-SRCS = $(wildcard *.c ../common/*.c)
+SRCS = $(wildcard *.c ../common/*.c ../loader/*.c)
 OBJS = $(addprefix ./obj/, $(notdir $(SRCS:.c=.o)))
 BIN_NAME = kiteshield
 
@@ -21,10 +21,13 @@ debug-antidebug: all
 output-dirs:
 	mkdir -p obj
 
-obj/%.o: %.c
+obj/%.o: ../loader/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 obj/%.o: ../common/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+obj/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -1,6 +1,7 @@
 /* Note most actual antidebug code is defined in this header file as it
  * has to be inlined everywhere. */
-#include "loader/include/anti_debug.h"
+#include "include/anti_debug.h"
+#include "include/syscalls.h"
 
 int sigtrap_counter = 0;
 

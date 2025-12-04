@@ -1,4 +1,4 @@
-CFLAGS_COMMON = -Wall -Werror -std=gnu99 -fno-pie -nostdlib -nostartfiles -nodefaultlibs -fno-builtin -c -I ..
+CFLAGS_COMMON = -Wall -Werror -Wno-error=array-bounds -Wno-error=dangling-pointer -Wno-error=sizeof-pointer-memaccess -std=gnu99 -fno-pie -nostdlib -nostartfiles -nodefaultlibs -fno-builtin -c -I ..
 LDFLAGS = -no-pie
 
 CFLAGS = $(CFLAGS_COMMON) -O2

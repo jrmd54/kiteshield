@@ -1,12 +1,12 @@
 #ifndef __KITESHIELD_ANTI_DEBUG_H
 #define __KITESHIELD_ANTI_DEBUG_H
 
-#include "loader/include/types.h"
-#include "loader/include/syscalls.h"
-#include "loader/include/signal.h"
-#include "loader/include/debug.h"
-#include "loader/include/string.h"
-#include "loader/include/obfuscated_strings.h"
+#include "types.h"
+#include "syscalls.h"
+#include "signal.h"
+#include "debug.h"
+#include "string.h"
+#include "obfuscated_strings.h"
 
 #define TRACED_MSG "We're being traced, exiting (-DNO_ANTIDEBUG to suppress)"
 

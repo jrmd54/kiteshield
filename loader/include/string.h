@@ -1,7 +1,7 @@
 #ifndef __KITESHIELD_STRING_H
 #define __KITESHIELD_STRING_H
 
-#include "loader/include/types.h"
+#include "types.h"
 
 void ks_vsnprintf(
     char *str,
