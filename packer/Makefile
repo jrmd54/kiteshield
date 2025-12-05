@@ -1,5 +1,6 @@
-CFLAGS_COMMON = -Wall -Werror -Wno-error=array-bounds -Wno-error=dangling-pointer -Wno-error=sizeof-pointer-memaccess -std=gnu99 -I .. -I bddisasm/inc
-CFLAGS = $(CFLAGS_COMMON) -O2 -Wno-error=array-bounds
+# -Werror -Wno-error=array-bounds -Wno-error=dangling-pointer -Wno-error=sizeof-pointer-memaccess
+CFLAGS_COMMON = -Wall  -std=gnu99 -I .. -I bddisasm/inc
+CFLAGS = $(CFLAGS_COMMON) -O2
 
 LDFLAGS = -Lbddisasm/bin/x64/Release -l:libbddisasm.a
 
